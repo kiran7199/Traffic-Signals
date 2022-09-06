@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            height: 300px;
+            width: 100px;
+            border: 5px solid rgb(33, 8, 8);
+            border-radius: 5px;
+            margin-left: 46%;
+            margin-top: 200px;
+            display: grid;
+            align-items: center;
+            justify-items: center;
+            background-color: black;
+            box-shadow: 0px 0px 30px 10px rgb(66, 14, 51);
+        }
+
+        #cir1 {
+            border: 1px solid rgb(0, 0, 0);
+            height: 50px;
+            width: 50px;
+            border-radius: 30px;
+            background-color: white;
+        }
+
+        #cir2 {
+            border: 1px solid black;
+            height: 50px;
+            width: 50px;
+            border-radius: 30px;
+            background-color: white;
+        }
+
+        #cir3 {
+            border: 1px solid black;
+            height: 50px;
+            width: 50px;
+            border-radius: 30px;
+            background-color: white;
+        }
+        #msg{
+            background-color: rgb(15, 244, 244);
+            width: 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="cir1"></div>
+        <div id="cir2"></div>
+        <div id="cir3"></div>
+    </div>
+   <center> <h1 id="msg">TRAFFIC SIGNAL</h1></center>
+    <script>
+        let cir1 = document.getElementById('cir1')
+        let cir2 = document.getElementById('cir2')
+        let cir3 = document.getElementById('cir3')
+        let msg = document.getElementById('msg')
+        setInterval(() => {
+            setTimeout(() => {
+                cir1.style.backgroundColor = 'red'
+                cir3.style.backgroundColor = 'white'
+                msg.textContent = 'STOP'
+            }, 5000);
+
+            setTimeout(() => {
+                cir2.style.backgroundColor = 'yellow'
+                cir1.style.backgroundColor='white'
+                msg.textContent = 'WAIT'
+            }, 10000);
+            setTimeout(() => {
+                cir3.style.backgroundColor = 'green'
+                cir2.style.backgroundColor='white'
+                msg.textContent = 'GO'
+            }, 15000);
+        }, 15000);
+
+
+    </script>
+</body>
+
+</html>
